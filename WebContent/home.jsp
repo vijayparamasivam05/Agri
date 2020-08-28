@@ -16,7 +16,6 @@ table, td, th {
 WELCOME TO HOME PAGE
 <br><br><br>
 <center>
-<form action="index.jsp">
 <table>
 <tr>
 <th>Username</th>
@@ -29,7 +28,10 @@ WELCOME TO HOME PAGE
 <td>${email_id}</td>
 </tr>
 </table><br>
-<button type="submit">logout</button>
+<form action="sell.jsp">
+<button type="submit">sell</button></form><br>
+<form action="index.jsp">
+<button type="submit">logout</button></form>
 </center>
 </body>
 </html>

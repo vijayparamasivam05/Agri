@@ -6,7 +6,6 @@ public class UserDAO {
 	Connection connection = ConnectionUtil.getConnection();
 	public void addUser(User user) throws Exception {
 		try {
-			//Connection connection = ConnectionUtil.getConnection();
 			System.out.println(connection);
 			String sql = "insert into User(user_name,password,mobile_number,email_id) values(?,?,?,?)";
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
