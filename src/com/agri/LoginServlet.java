@@ -7,7 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-//import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpSession;
 
 @SuppressWarnings("serial")
 @WebServlet("/LoginServlet")
@@ -23,12 +23,12 @@ public class LoginServlet extends HttpServlet {
 			if(dao.checkUser(name,password))
 			{
 			User user=dao.getUser(name, password);
-			//HttpSession session=request.getSession();  
-	        //session.setAttribute("user_name",user.getUser_name());
+			HttpSession session=request.getSession();  
+	        session.setAttribute("user_name",user.getUser_name());
 	        request.setAttribute("user_name",user.getUser_name());
-	        //session.setAttribute("mobile_number",user.getMobile_number());
+	        session.setAttribute("mobile_number",user.getMobile_number());
 	        request.setAttribute("mobile_number",user.getMobile_number());
-	        //session.setAttribute("email_id",user.getEmail_id());
+	        session.setAttribute("email_id",user.getEmail_id());
 	        request.setAttribute("email_id",user.getEmail_id());
 			RequestDispatcher rd = request.getRequestDispatcher("home.jsp");
 			rd.forward(request, response);
