@@ -10,28 +10,27 @@ table, td, th {
 </style>
 <head>
 <meta charset="UTF-8">
-<title>home</title>
+<title>product</title>
 </head>
 <body>
-WELCOME TO HOME PAGE
+WELCOME TO PRODUCT PAGE
 <br><br><br>
 <center>
 <table>
 <tr>
-<th>Username</th>
-<th>Number</th>
-<th>Email ID</th>
+<th>Product Name</th>
+<th>Product Details</th>
+<th>Unit</th>
+<th>Price</th>
 </tr>
 <tr>
-<td>${user_name}</td>
-<td>${mobile_number}</td>
-<td>${email_id}</td>
+<td>${product_name}</td>
+<td>${product_details}</td>
+<td>${unit}</td>
+<td>${price}</td>
 </tr>
 </table><br>
-<form action="sell.jsp">
-<button type="submit">sell</button></form>
-<form action="buy.jsp">
-<button type="submit">buy</button></form><br>
+<a href="buy.jsp">back</a>
 <form action="index.jsp">
 <button type="submit">logout</button></form>
 </center>
