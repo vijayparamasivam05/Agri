@@ -10,10 +10,9 @@ table, td, th {
 </style>
 <head>
 <meta charset="UTF-8">
-<title>home</title>
+<title>contact</title>
 </head>
 <body>
-WELCOME TO HOME PAGE
 <br><br><br>
 <center>
 <table>
@@ -28,12 +27,9 @@ WELCOME TO HOME PAGE
 <td>${email_id}</td>
 </tr>
 </table><br>
-<form action="sell.jsp">
-<button type="submit" value = ${user_name} name="user_name"}>sell</button></form>
-<form action="buy.jsp">
-<button type="submit">buy</button></form><br>
 <form action="index.jsp">
 <button type="submit">logout</button></form>
+<a href="product.jsp">back</a>
 </center>
 </body>
 </html>

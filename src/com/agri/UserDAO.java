@@ -57,4 +57,36 @@ public class UserDAO {
 		{ e.printStackTrace();}
 		return user;
 	}
+	public boolean checkContact(String name) throws SQLException {
+		// TODO Auto-generated method stub
+		boolean b = false;
+		String sql = "select * from User where user_name=?";
+		PreparedStatement preparedStatement = connection.prepareStatement(sql);
+		try {
+			preparedStatement.setString(1, name);
+			resultSet = preparedStatement.executeQuery();
+			if (resultSet.next()) { b=true;}
+			}catch (Exception e) 
+		{ e.printStackTrace();}
+		return b;
+	}
+	public User getUser(String name) throws SQLException {
+		// TODO Auto-generated method stub
+		User user = new User();
+		String sql = "select * from User where user_name=?";
+		PreparedStatement preparedStatement = connection.prepareStatement(sql);
+		try {
+			preparedStatement.setString(1, name);
+			resultSet = preparedStatement.executeQuery();
+			if (resultSet.next()) {
+				user.setUser_name(resultSet.getString(1));
+				user.setPassword(resultSet.getString(2));
+				user.setMobile_number(resultSet.getLong(3));
+				user.setEmail_id(resultSet.getString(4));
+			}
+			
+		}catch (Exception e) 
+		{ e.printStackTrace();}
+		return user;
+	}
 }

@@ -5,19 +5,23 @@ public class ProductDAO {
 	ResultSet resultSet = null;
 	Connection connection = ConnectionUtil.getConnection();
 	public void addProduct(Product product) throws Exception {
+				
 		try {
 			System.out.println(connection);
-			String sql = "insert into Product(product_name,product_details,unit,price) values(?,?,?,?)";
+			String sql = "insert into Product(product_name,product_details,unit,price,seller_name) values(?,?,?,?,?)";
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setString(1, product.getProduct_name());
 			preparedStatement.setString(2, product.getProduct_details());
 			preparedStatement.setInt(3, product.getUnit());
 			preparedStatement.setInt(4, product.getPrice());
+			preparedStatement.setString(5, product.getSeller_name());
+			System.out.println("value of Seller:"+ product.getSeller_name());
 			int rows = preparedStatement.executeUpdate();
 			System.out.println("Rows inserted: " + rows);
 			ConnectionUtil.close(connection, preparedStatement, resultSet);
 		} catch (Exception e) {
 			e.printStackTrace();
+			
 		}
 
 	}
@@ -48,6 +52,7 @@ public class ProductDAO {
 				product.setProduct_details(resultSet.getString(2));
 				product.setUnit(resultSet.getInt(3));
 				product.setPrice(resultSet.getInt(4));
+				product.setSeller_name(resultSet.getString(5));
 			}
 		}catch (Exception e) 
 		{ e.printStackTrace();}

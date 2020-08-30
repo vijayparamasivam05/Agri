@@ -29,6 +29,8 @@ public class ProductSearchServlet extends HttpServlet{
 			    request.setAttribute("unit",product.getUnit());
 			    session.setAttribute("price",product.getPrice());
 			    request.setAttribute("price",product.getPrice());
+			    session.setAttribute("seller_name",product.getSeller_name());
+			    request.setAttribute("seller_name",product.getSeller_name());
 				RequestDispatcher rd = request.getRequestDispatcher("product.jsp");
 				rd.forward(request, response);
 			}

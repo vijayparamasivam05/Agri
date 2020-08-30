@@ -9,7 +9,7 @@ table, td{
 </style>
 <head>
 <meta charset="UTF-8">
-<title> SELL Page </title>  
+<title> sell </title>  
 </head>
 <body>
 <h2>Welcome!!!!</h2><br><br>

@@ -22,12 +22,18 @@ WELCOME TO PRODUCT PAGE
 <th>Product Details</th>
 <th>Unit</th>
 <th>Price</th>
+<th>seller_name</th>
 </tr>
 <tr>
 <td>${product_name}</td>
 <td>${product_details}</td>
 <td>${unit}</td>
 <td>${price}</td>
+<td>${seller_name}</td>
+<td><form action="ContactServlet" method="post">
+<input type="hidden" name="seller_name" value=${seller_name}>
+<button type="submit">contact</button></form>
+</td>
 </tr>
 </table><br>
 <a href="buy.jsp">back</a>
