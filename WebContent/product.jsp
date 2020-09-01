@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@page import="com.agri.Product"%> 
+<%@page import="java.util.ArrayList"%> 
 <!DOCTYPE html>
 <html>
 <style>
@@ -24,17 +26,20 @@ WELCOME TO PRODUCT PAGE
 <th>Price</th>
 <th>seller_name</th>
 </tr>
+<% ArrayList<Product> product_list =(ArrayList<Product>)request.getAttribute("product_list"); 
+        for(Product p:product_list){%> 
 <tr>
-<td>${product_name}</td>
-<td>${product_details}</td>
-<td>${unit}</td>
-<td>${price}</td>
-<td>${seller_name}</td>
+ <td><%=p.getProduct_name()%></td>
+ <td><%=p.getProduct_details()%></td>
+ <td><%=p.getUnit()%></td>
+ <td><%=p.getPrice()%></td>
+ <td><%=p.getSeller_name()%></td> 
 <td><form action="ContactServlet" method="post">
-<input type="hidden" name="seller_name" value=${seller_name}>
+<input type="hidden" name="seller_name" value=<%=p.getSeller_name()%>>
 <button type="submit">contact</button></form>
 </td>
 </tr>
+<%}%> 
 </table><br>
 <a href="buy.jsp">back</a>
 <form action="index.jsp">
