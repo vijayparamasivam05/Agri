@@ -18,31 +18,7 @@ public class ProductSearchServlet extends HttpServlet{
 		String product_name =request.getParameter("product_name");
 		ProductDAO pdao = new ProductDAO();
 		
-		try {/*
-			if(pdao.checkProduct(product_name)){
-				Product product = pdao.getProduct(product_name);
-				HttpSession session=request.getSession();  
-			    session.setAttribute("product_name",product.getProduct_name());
-			    request.setAttribute("product_name",product.getProduct_name());
-			    session.setAttribute("product_details",product.getProduct_details());
-			    request.setAttribute("product_details",product.getProduct_details());
-			    session.setAttribute("unit",product.getUnit());
-			    request.setAttribute("unit",product.getUnit());
-			    session.setAttribute("price",product.getPrice());
-			    request.setAttribute("price",product.getPrice());
-			    session.setAttribute("seller_name",product.getSeller_name());
-			    request.setAttribute("seller_name",product.getSeller_name());
-				RequestDispatcher rd = request.getRequestDispatcher("product.jsp");
-				rd.forward(request, response);
-			}
-			else
-			{
-				request.setAttribute("result","not available");
-				RequestDispatcher rd = request.getRequestDispatcher("buy.jsp");
-				rd.forward(request, response);
-			}
-			
-			*/
+		try {
 			ArrayList<Product> product_list = new ArrayList<Product>();
 			product_list = pdao.getProductList(product_name);
 			if(product_list.isEmpty()) {

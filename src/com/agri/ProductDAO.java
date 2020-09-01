@@ -26,7 +26,7 @@ public class ProductDAO {
 		}
 
 	}
-	public boolean checkProduct(String product_name) throws SQLException {
+/*	public boolean checkProduct(String product_name) throws SQLException {
 		// TODO Auto-generated method stub
 		boolean b = false;
 		String sql = "select * from Product where product_name=?";
@@ -59,7 +59,7 @@ public class ProductDAO {
 		{ e.printStackTrace();}
 		return product;
 	}
-	
+	*/
 	public ArrayList<Product> getProductList(String product_name) throws SQLException {
 		ArrayList<Product> product_list = new ArrayList<Product>();
 		String sql = "select * from Product where product_name=?";
@@ -75,15 +75,9 @@ public class ProductDAO {
 				product.setPrice(resultSet.getInt(4));
 				product.setSeller_name(resultSet.getString(5));
 				product_list.add(product);
-				System.out.println("Inside while name:"+product.getSeller_name());
 			}
 		}catch (Exception e) 
 		{ e.printStackTrace();}
-		for(Product p:product_list) {
-			System.out.println("Outside while name:"+p.getSeller_name());
-		}
-
-		//System.out.println("Length:"+product_list.size());
 		return product_list;
 		
 	}

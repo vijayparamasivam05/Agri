@@ -19,6 +19,9 @@ WELCOME TO PRODUCT PAGE
 <br><br><br>
 <center>
 <table>
+<% try{ArrayList<Product> product_list =(ArrayList<Product>)request.getAttribute("product_list");
+if(product_list.isEmpty()==false){
+%>
 <tr>
 <th>Product Name</th>
 <th>Product Details</th>
@@ -26,8 +29,8 @@ WELCOME TO PRODUCT PAGE
 <th>Price</th>
 <th>seller_name</th>
 </tr>
-<% ArrayList<Product> product_list =(ArrayList<Product>)request.getAttribute("product_list"); 
-        for(Product p:product_list){%> 
+ <%
+for(Product p:product_list){%> 
 <tr>
  <td><%=p.getProduct_name()%></td>
  <td><%=p.getProduct_details()%></td>
@@ -39,6 +42,9 @@ WELCOME TO PRODUCT PAGE
 <button type="submit">contact</button></form>
 </td>
 </tr>
+<%}}}
+catch(NullPointerException e){%>
+<p> no product is available</p>
 <%}%> 
 </table><br>
 <a href="buy.jsp">back</a>

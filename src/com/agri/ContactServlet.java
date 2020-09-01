@@ -21,12 +21,12 @@ public class ContactServlet extends HttpServlet{
 		if(dao.checkContact(name))
 		{
 		User user=dao.getUser(name);
-		HttpSession session=request.getSession();  
-        session.setAttribute("user_name",user.getUser_name());
+		//HttpSession session=request.getSession();  
+        //session.setAttribute("user_name",user.getUser_name());
         request.setAttribute("user_name",user.getUser_name());
-        session.setAttribute("mobile_number",user.getMobile_number());
+        //session.setAttribute("mobile_number",user.getMobile_number());
         request.setAttribute("mobile_number",user.getMobile_number());
-        session.setAttribute("email_id",user.getEmail_id());
+        //session.setAttribute("email_id",user.getEmail_id());
         request.setAttribute("email_id",user.getEmail_id());
 		RequestDispatcher rd = request.getRequestDispatcher("contact.jsp");
 		rd.forward(request, response);
