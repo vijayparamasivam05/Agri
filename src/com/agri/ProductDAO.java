@@ -24,7 +24,6 @@ public class ProductDAO {
 			e.printStackTrace();
 			
 		}
-
 	}
 /*	public boolean checkProduct(String product_name) throws SQLException {
 		// TODO Auto-generated method stub
